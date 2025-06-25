@@ -17,17 +17,10 @@ function LoginPage() {
     }));
   };
 
-
-  //     const passwordInput = document.getElementById("toggle-password-visibility");
-  //   btn.addEventListener("click", () => {
-  //     const passwordField = document.getElementById("password");
-  //     if (passwordField.type === "password") {
-  //       passwordField.type = "text";
-  //     }
-  //     else {
-  //       passwordField.type = "password";
-  //     }
-  //     });
+  const [passwordVisible, setPasswordVisible] = useState(false);
+  const handlePasswordToggle = () => {
+    setPasswordVisible((prev) => !prev);
+  }
 
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,_#eff6ff_0%,_#ffffff_50%,_#dbeafe_100%)] flex items-center justify-center p-[16px]">
@@ -70,7 +63,7 @@ function LoginPage() {
                 Password
               </label>
               <input
-                type="password"
+                type={passwordVisible ? "text" : "password"}
                 id="password"
                 name="password"
                 value={formData.password}
@@ -81,6 +74,7 @@ function LoginPage() {
               />
               <button
                 type="button"
+                onClick={handlePasswordToggle}
                 className="absolute right-[12px] top-[37px] bg-transparent border-none p-[4px] cursor-pointer hover:bg-[#f3f4f6]"
               >
                 <img
