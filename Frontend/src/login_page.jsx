@@ -6,46 +6,21 @@ import Button from "./components/customButton.jsx";
 import InputField from "./components/inputField.jsx";
 
 function LoginPage() {
-<<<<<<< HEAD
-  //     const passwordInput = document.getElementById("toggle-password-visibility");
-  //   btn.addEventListener("click", () => {
-  //     const passwordField = document.getElementById("password");
-  //     if (passwordField.type === "password") {
-  //       passwordField.type = "text";
-  //     }
-  //     else {
-  //       passwordField.type = "password";
-  //     }
-  //     });
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
-=======
-  const [formData, setFormData] = useState({
-    username: "",
-    password: ""
-  });
-
->>>>>>> origin/LoginPageFix
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-<<<<<<< HEAD
       [name]: value,
     }));
   };
-=======
-      [name]: value
-    }));
-  };
-
   const [passwordVisible, setPasswordVisible] = useState(false);
   const handlePasswordToggle = () => {
     setPasswordVisible((prev) => !prev);
   }
->>>>>>> origin/LoginPageFix
 
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,_#eff6ff_0%,_#ffffff_50%,_#dbeafe_100%)] flex items-center justify-center p-[16px]">
@@ -71,35 +46,14 @@ function LoginPage() {
               />
             </div>
             <div className="relative">
-<<<<<<< HEAD
-              <div>
                 <InputField
                   label="Password"
-                  type="password"
+                  type={passwordVisible ? "text" : "password"}
                   name="password"
                   value={formData.password}
                   placeholder="Enter your password"
                   changeHandler={handleInputChange}
                 />
-              </div>
-=======
-              <label
-                htmlFor="password"
-                className="block text-[14px] font-medium text-[#374151] mb-[8px]"
-              >
-                Password
-              </label>
-              <input
-                type={passwordVisible ? "text" : "password"}
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-                className="w-full max-w-[400px] px-[16px] py-[12px] border-[2px] border-[#d1d5db] rounded-[8px] focus:border-[#3b82f6] focus:outline-none text-[#000000] bg-[#f9fafb] focus:bg-[#ffffff] transition-all duration-[200ms] text-[16px]"
-                placeholder="Enter your password"
-              />
->>>>>>> origin/LoginPageFix
               <button
                 type="button"
                 onClick={handlePasswordToggle}
