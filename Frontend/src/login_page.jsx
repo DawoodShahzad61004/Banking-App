@@ -2,6 +2,7 @@ import { useState } from "react";
 import appleSVg from "./assets/apple.svg";
 import googleSVG from "./assets/google.svg";
 import eyeSVG from "./assets/eye.svg";
+import Button from "./components/customButton.jsx";
 
 function LoginPage() {
   const [formData, setFormData] = useState({
@@ -76,9 +77,10 @@ function LoginPage() {
                 value={formData.password}
                 onChange={handleInputChange}
                 required
-                className="w-full max-w-[400px] px-[16px] py-[12px] border-[2px] border-[#d1d5db] rounded-[8px] focus:border-[#3b82f6] focus:outline-none text-[#000000] bg-[#f9fafb] focus:bg-[#ffffff] transition-all duration-[200ms] text-[16px]"
+                className="w-full max-w-[400px] px-[16px] py-[12px] border-[2px] border-[#d1d5db] rounded-[10px] focus:border-[#2563eb] focus:outline-none text-[#111827] bg-[#f9fafb] focus:bg-[#ffffff] transition-all duration-200 ease-in-out text-[16px] shadow-sm focus:shadow-[0_0_0_3px_rgba(37,99,235,0.15)]"
                 placeholder="Enter your password"
               />
+
               <button
                 type="button"
                 className="absolute right-[12px] top-[37px] bg-transparent border-none p-[4px] cursor-pointer hover:bg-[#f3f4f6]"
@@ -118,12 +120,9 @@ function LoginPage() {
             </div>
 
             {/* Login Button */}
-            <button
-              type="submit"
-              className="w-full bg-[linear-gradient(90deg,_#2563eb_0%,_#1d4ed8_100%)] text-[#ffffff] py-[12px] px-[16px] rounded-[8px] font-medium hover:bg-[linear-gradient(90deg,_#1d4ed8_0%,_#1e40af_100%)] transition-all duration-[200ms] shadow-[0_4px_12px_rgba(37,99,235,0.3)] hover:shadow-[0_6px_16px_rgba(37,99,235,0.4)] text-[16px]"
-            >
-              Sign In
-            </button>
+            <div className="mt-[24px]">
+              <Button text="Sign In" type="submit" />
+            </div>
           </form>
 
           {/* Divider */}
