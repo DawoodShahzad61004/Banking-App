@@ -54,7 +54,7 @@ function LoginPage() {
             <div className="relative">
               <div>
                 <InputField
-                  label="password"
+                  label="Password"
                   type="password"
                   name="password"
                   value={formData.password}
