@@ -1,9 +1,9 @@
 import { useState } from "react";
-import appleSVg from "./assets/apple.svg";
-import googleSVG from "./assets/google.svg";
-import eyeSVG from "./assets/eye.svg";
-import Button from "./components/customButton.jsx";
-import InputField from "./components/inputField.jsx";
+import appleSVg from "../../assets/apple.svg";
+import googleSVG from "../../assets/google.svg";
+import eyeSVG from "../../assets/eye.svg";
+import Button from "../../components/customButton.jsx";
+import InputField from "../../components/inputField.jsx";
 
 function LoginPage() {
   const [formData, setFormData] = useState({

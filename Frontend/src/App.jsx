@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import LoginPage from './login_page'
+import LoginPage from './containers/loginScreens/login_page'
 
 function App() {
   const [count, setCount] = useState(0)
