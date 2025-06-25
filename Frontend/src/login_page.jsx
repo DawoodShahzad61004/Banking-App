@@ -3,22 +3,9 @@ import appleSVg from "./assets/apple.svg";
 import googleSVG from "./assets/google.svg";
 import eyeSVG from "./assets/eye.svg";
 import Button from "./components/customButton.jsx";
+import InputField from "./components/inputField.jsx";
 
 function LoginPage() {
-  const [formData, setFormData] = useState({
-    username: "",
-    password: ""
-  });
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-
   //     const passwordInput = document.getElementById("toggle-password-visibility");
   //   btn.addEventListener("click", () => {
   //     const passwordField = document.getElementById("password");
@@ -29,11 +16,21 @@ function LoginPage() {
   //       passwordField.type = "password";
   //     }
   //     });
+  const [formData, setFormData] = useState({
+    username: "",
+    password: "",
+  });
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,_#eff6ff_0%,_#ffffff_50%,_#dbeafe_100%)] flex items-center justify-center p-[16px]">
       <div className="bg-[#ffffff] w-full max-w-[500px] max-h-[700px] rounded-[16px] shadow-[0_10px_25px_rgba(0,0,0,0.15)] border border-[#e5e7eb] overflow-hidden">
-
         {/* Head */}
         <div className="bg-[linear-gradient(90deg,_#2563eb_0%,_#1d4ed8_100%)] px-[32px] py-[20px] text-center">
           <h1 className="text-[24px] font-bold text-[#ffffff] mb-[8px]">
@@ -45,42 +42,26 @@ function LoginPage() {
         <div className="px-[32px] py-[32px]">
           <form className="space-y-[24px]">
             <div>
-              <label
-                htmlFor="username"
-                className="block text-[14px] font-medium text-[#374151] mb-[8px]"
-              >
-                Username
-              </label>
-              <input
+              <InputField
+                label="Username"
                 type="text"
-                id="username"
                 name="username"
                 value={formData.username}
-                onChange={handleInputChange}
-                required
-                className="w-full max-w-[400px] px-[16px] py-[12px] border-[2px] border-[#d1d5db] rounded-[8px] focus:border-[#3b82f6] focus:outline-none text-[black] bg-[#f9fafb] focus:bg-[#ffffff] transition-all duration-[200ms] text-[16px]"
                 placeholder="Enter your username"
+                changeHandler={handleInputChange}
               />
             </div>
-
             <div className="relative">
-              <label
-                htmlFor="password"
-                className="block text-[14px] font-medium text-[#374151] mb-[8px]"
-              >
-                Password
-              </label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleInputChange}
-                required
-                className="w-full max-w-[400px] px-[16px] py-[12px] border-[2px] border-[#d1d5db] rounded-[10px] focus:border-[#2563eb] focus:outline-none text-[#111827] bg-[#f9fafb] focus:bg-[#ffffff] transition-all duration-200 ease-in-out text-[16px] shadow-sm focus:shadow-[0_0_0_3px_rgba(37,99,235,0.15)]"
-                placeholder="Enter your password"
-              />
-
+              <div>
+                <InputField
+                  label="password"
+                  type="password"
+                  name="password"
+                  value={formData.password}
+                  placeholder="Enter your password"
+                  changeHandler={handleInputChange}
+                />
+              </div>
               <button
                 type="button"
                 className="absolute right-[12px] top-[37px] bg-transparent border-none p-[4px] cursor-pointer hover:bg-[#f3f4f6]"
@@ -92,7 +73,6 @@ function LoginPage() {
                 />
               </button>
             </div>
-
             {/* Remember Me & Forgot Password */}
             <div className="flex items-center justify-between">
               <div className="flex items-center">
@@ -118,7 +98,6 @@ function LoginPage() {
                 </a>
               </div>
             </div>
-
             {/* Login Button */}
             <div className="mt-[24px]">
               <Button text="Sign In" type="submit" />
