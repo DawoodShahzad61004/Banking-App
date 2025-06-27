@@ -43,7 +43,7 @@ function LandingPage() {
 
           {/* Right Content - Phone Mockup */}
           <div className="w-full lg:w-[50%] flex items-center justify-center">
-            <div className="relative w-[320px] h-[400px] lg:w-[380px] lg:h-[480px]">
+            <div className="relative w-[320px] h-[420px] lg:w-[380px] lg:h-[480px]">
               {/* Main Phone */}
               <div className="absolute inset-[0] bg-[linear-gradient(135deg,_#1d4ed8_0%,_#1e40af_100%)] rounded-[32px] shadow-[0_25px_60px_rgba(29,78,216,0.4)] transform rotate-[6deg] hover:rotate-[3deg] transition-transform duration-[300ms]">
                 <div className="absolute inset-[16px] bg-[white] rounded-[24px] flex flex-col p-[24px] space-y-[20px]">
