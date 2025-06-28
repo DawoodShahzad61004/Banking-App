@@ -1,117 +1,112 @@
-import LoginPage from "./login_page";
-
 function LandingPage() {
   return (
-    <div className="bg-[linear-gradient(135deg,_#2563eb_0%,_#1d4ed8_50%,_#1e40af_100%)] w-full min-h-[100vh] flex items-center justify-center p-[16px]">
-      <div className="bg-[white] w-[95%] max-w-[1200px] min-h-[700px] rounded-[24px] shadow-[0_20px_50px_rgba(0,0,0,0.15)] overflow-hidden">
+    <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 w-full min-h-screen flex items-center justify-center p-4">
+      <div className="bg-white w-full max-w-7xl min-h-[600px] rounded-3xl shadow-2xl overflow-hidden">
         {/* Header */}
-        <div className="p-[24px] border-b-[1px] border-[#f1f5f9]">
-          <h1 className="text-[28px] font-bold text-[#1e293b]">
-            Apna <span className="text-[#1d4ed8] italic">BANK</span>
+        <div className="px-6 py-4 md:px-8 md:py-6 border-b border-slate-100">
+          <h1 className="text-2xl md:text-3xl font-bold text-slate-800">
+            Apna <span className="text-blue-700 italic">BANK</span>
           </h1>
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col lg: flex-row items-center justify-between p-[40px] gap-[40px]">
+        <div className="flex flex-col lg:flex-row items-center justify-between p-6 md:p-10 lg:p-12 gap-8 lg:gap-12">
           {/* Left Content */}
-          <div className="w-full lg:w-[50%] flex flex-col space-y-[24px]">
-            <div className="space-y-[16px]">
-              <h2 className="text-[42px] lg:text-[48px] font-bold text-[#1e293b] leading-[1.1]">
+          <div className="w-full lg:w-1/2 flex flex-col space-y-6 lg:space-y-8 text-center lg:text-left">
+            <div className="space-y-4 lg:space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-800 leading-tight">
                 Digital Banking
                 <br />
-                <span className="text-[#1d4ed8] italic">Experience</span>
+                <span className="text-blue-700 italic">Experience</span>
               </h2>
-              <p className="text-[20px] text-[#64748b] leading-[1.6] max-w-[480px]">
-                Experience effortless banking with our powerful, all-in-one app
-                — built for speed, security, and control. Manage your money
-                smarter, anytime, anywhere.
+              <p className="text-base sm:text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                Experience effortless banking with our powerful, all-in-one app — built for speed, security, and
+                control. Manage your money smarter, anytime, anywhere.
               </p>
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-row sm:flex-row gap-[16px] pt-[8px]">
-              <button className="bg-[#1d4ed8] hover:bg-[#1e40af] w-[200px] sm:w-[200px] px-[32px] py-[16px] rounded-[50px] text-[white] font-semibold text-[16px] transition-all duration-[200ms] transform hover:scale-[1.05] shadow-[0_8px_20px_rgba(29,78,216,0.3)] hover:shadow-[0_12px_30px_rgba(29,78,216,0.4)]">
+            <div className="flex flex-col sm:flex-row gap-4 pt-2 justify-center lg:justify-start">
+              <button className="bg-blue-700 hover:bg-blue-800 w-full sm:w-48 px-8 py-4 rounded-full text-white font-semibold text-base transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl shadow-blue-700/30 hover:shadow-blue-700/40">
                 Sign In
               </button>
-              <button className="bg-[white] hover:bg-[#f8fafc] w-[200px] sm:w-[200px] border-[2px] border-[#1d4ed8] px-[32px] py-[16px] rounded-[50px] text-[#1d4ed8] hover:text-[#1e40af] font-semibold text-[16px] transition-all duration-[200ms] transform hover:scale-[1.05] shadow-[0_4px_15px_rgba(29,78,216,0.2)] hover:shadow-[0_8px_25px_rgba(29,78,216,0.3)]">
+              <button className="bg-white hover:bg-slate-50 w-full sm:w-48 border-2 border-blue-700 px-8 py-4 rounded-full text-blue-700 hover:text-blue-800 font-semibold text-base transition-all duration-200 transform hover:scale-105 shadow-md hover:shadow-lg shadow-blue-700/20 hover:shadow-blue-700/30">
                 Sign Up
               </button>
             </div>
 
             {/* Trust Indicators */}
+            <div className="flex flex-wrap justify-center lg:justify-start gap-4 lg:gap-6 pt-6">
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm md:text-base text-slate-600 font-medium">Bank-Level Security</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm md:text-base text-slate-600 font-medium">24/7 Customer Support</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                <span className="text-sm md:text-base text-slate-600 font-medium">Instant Transfers</span>
+              </div>
+            </div>
           </div>
 
           {/* Right Content - Phone Mockup */}
-          <div className="w-full lg:w-[50%] flex items-center justify-center">
-            <div className="relative w-[320px] h-[420px] lg:w-[380px] lg:h-[480px]">
+          <div className="w-full lg:w-1/2 flex items-center justify-center mt-8 lg:mt-0">
+            <div className="relative w-72 h-96 sm:w-80 sm:h-[420px] lg:w-96 lg:h-[480px]">
               {/* Main Phone */}
-              <div className="absolute inset-[0] bg-[linear-gradient(135deg,_#1d4ed8_0%,_#1e40af_100%)] rounded-[32px] shadow-[0_25px_60px_rgba(29,78,216,0.4)] transform rotate-[6deg] hover:rotate-[3deg] transition-transform duration-[300ms]">
-                <div className="absolute inset-[16px] bg-[white] rounded-[24px] flex flex-col p-[24px] space-y-[20px]">
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-700 to-blue-800 rounded-3xl shadow-2xl shadow-blue-700/40 transform rotate-6 hover:rotate-3 transition-transform duration-300">
+                <div className="absolute inset-4 bg-white rounded-2xl flex flex-col p-4 sm:p-6 space-y-4 sm:space-y-5">
                   {/* App Header */}
                   <div className="flex items-center justify-between">
-                    <div className="w-[40px] h-[40px] bg-[#dbeafe] rounded-[12px] flex items-center justify-center">
-                      <div className="w-[20px] h-[20px] bg-[#1d4ed8] rounded-[6px]"></div>
+                    <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-50 rounded-xl flex items-center justify-center">
+                      <div className="w-4 h-4 sm:w-5 sm:h-5 bg-blue-700 rounded-md"></div>
                     </div>
-                    <div className="flex gap-[4px]">
-                      <div className="w-[4px] h-[4px] bg-[#e2e8f0] rounded-[50%]"></div>
-                      <div className="w-[4px] h-[4px] bg-[#e2e8f0] rounded-[50%]"></div>
-                      <div className="w-[4px] h-[4px] bg-[#1d4ed8] rounded-[50%]"></div>
+                    <div className="flex gap-1">
+                      <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
+                      <div className="w-1 h-1 bg-slate-300 rounded-full"></div>
+                      <div className="w-1 h-1 bg-blue-700 rounded-full"></div>
                     </div>
                   </div>
 
                   {/* Balance Card */}
-                  <div className="bg-[linear-gradient(135deg,_#1d4ed8_0%,_#3b82f6_100%)] rounded-[16px] p-[20px] text-[white]">
-                    <div className="text-[14px] opacity-[0.8] mb-[4px]">
-                      Total Balance
-                    </div>
-                    <div className="text-[24px] font-bold">$12,450.00</div>
+                  <div className="bg-gradient-to-r from-blue-700 to-blue-500 rounded-2xl p-4 sm:p-5 text-white">
+                    <div className="text-xs sm:text-sm opacity-80 mb-1">Total Balance</div>
+                    <div className="text-lg sm:text-2xl font-bold">$12,450.00</div>
                   </div>
 
                   {/* Quick Actions */}
-                  <div className="space-y-[12px]">
-                    <div className="h-[48px] bg-[#1d4ed8] rounded-[12px] flex items-center justify-center">
-                      <div className="w-[120px] h-[4px] bg-[white] rounded-[2px] opacity-[0.8]"></div>
+                  <div className="space-y-3">
+                    <div className="h-10 sm:h-12 bg-blue-700 rounded-xl flex items-center justify-center">
+                      <div className="w-24 sm:w-30 h-1 bg-white rounded-sm opacity-80"></div>
                     </div>
-                    <div className="h-[48px] bg-[#f1f5f9] rounded-[12px] flex items-center justify-center">
-                      <div className="w-[100px] h-[4px] bg-[#cbd5e1] rounded-[2px]"></div>
+                    <div className="h-10 sm:h-12 bg-slate-100 rounded-xl flex items-center justify-center">
+                      <div className="w-20 sm:w-25 h-1 bg-slate-400 rounded-sm"></div>
                     </div>
-                    <div className="h-[48px] bg-[#f1f5f9] rounded-[12px] flex items-center justify-center">
-                      <div className="w-[80px] h-[4px] bg-[#cbd5e1] rounded-[2px]"></div>
+                    <div className="h-10 sm:h-12 bg-slate-100 rounded-xl flex items-center justify-center">
+                      <div className="w-16 sm:w-20 h-1 bg-slate-400 rounded-sm"></div>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Floating Elements */}
-              <div className="absolute top-[-16px] right-[-16px] w-[48px] h-[48px] bg-[#10b981] rounded-[50%] flex items-center justify-center shadow-[0_8px_20px_rgba(16,185,129,0.3)] animate-bounce">
-                <span className="text-[white] font-bold text-[18px]">$</span>
+              <div className="absolute -top-4 -right-4 w-10 h-10 sm:w-12 sm:h-12 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30 animate-bounce">
+                <span className="text-white font-bold text-sm sm:text-lg">$</span>
               </div>
-              <div className="absolute bottom-[-16px] left-[-16px] w-[40px] h-[40px] bg-[#f59e0b] rounded-[50%] flex items-center justify-center shadow-[0_6px_15px_rgba(245,158,11,0.3)] animate-pulse">
-                <span className="text-[white] font-bold text-[14px]">★</span>
+              <div className="absolute -bottom-4 -left-4 w-8 h-8 sm:w-10 sm:h-10 bg-amber-500 rounded-full flex items-center justify-center shadow-lg shadow-amber-500/30 animate-pulse">
+                <span className="text-white font-bold text-xs sm:text-sm">★</span>
               </div>
-              <div className="absolute top-[50%] right-[-24px] w-[32px] h-[32px] bg-[#ef4444] rounded-[50%] flex items-center justify-center shadow-[0_4px_12px_rgba(239,68,68,0.3)]">
-                <div className="w-[8px] h-[8px] bg-[white] rounded-[50%]"></div>
+              <div className="absolute top-1/2 -right-6 w-6 h-6 sm:w-8 sm:h-8 bg-red-500 rounded-full flex items-center justify-center shadow-lg shadow-red-500/30">
+                <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-white rounded-full"></div>
               </div>
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap gap-[24px] pt-[24px] m-[24px]">
-              <div className="flex items-center gap-[8px]">
-                <div className="w-[8px] h-[8px] bg-[#10b981] rounded-[50%]"></div>
-                <span className="text-[14px] text-[#64748b] font-medium">Bank-Level Security</span>
-              </div>
-              <div className="flex items-center gap-[8px]">
-                <div className="w-[8px] h-[8px] bg-[#10b981] rounded-[50%]"></div>
-                <span className="text-[14px] text-[#64748b] font-medium">24/7 Customer Support</span>
-              </div>
-              <div className="flex items-center gap-[8px]">
-                <div className="w-[8px] h-[8px] bg-[#10b981] rounded-[50%]"></div>
-                <span className="text-[14px] text-[#64748b] font-medium">Instant Transfers</span>
-              </div>
-            </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default LandingPage;
+export default LandingPage
