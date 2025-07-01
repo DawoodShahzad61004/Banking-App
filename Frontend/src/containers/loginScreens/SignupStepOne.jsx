@@ -1,7 +1,12 @@
 import InputField from "../../components/inputField";
 import eyeSVG from "../../assets/eye.svg";
 
-function SignupStepOne({ formData, handleInputChange, passwordVisible, handlePasswordToggle }) {
+function SignupStepOne({
+  formData,
+  handleInputChange,
+  passwordVisible,
+  handlePasswordToggle,
+}) {
   return (
     <>
       <div className="grid grid-cols-2 gap-[16px]">
@@ -41,9 +46,13 @@ function SignupStepOne({ formData, handleInputChange, passwordVisible, handlePas
         <button
           type="button"
           onClick={handlePasswordToggle}
-          className="absolute right-[12px] top-[37px] bg-transparent p-[4px] cursor-pointer"
+          className="absolute right-[12px] top-[56px] -translate-y-1/2 bg-transparent p-[4px] cursor-pointer"
         >
-          <img src={eyeSVG} alt="Toggle Password" className="w-[24px] h-[24px]" />
+          <img
+            src={eyeSVG}
+            alt="Toggle Password"
+            className="w-[24px] h-[24px]"
+          />
         </button>
       </div>
 
