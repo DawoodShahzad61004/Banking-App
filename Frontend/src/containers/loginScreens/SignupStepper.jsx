@@ -2,7 +2,6 @@ import { useState } from "react";
 import SignupStepOne from "./SignupStepOne";
 import SignupStepTwo from "./SignupStepTwo";
 import Button from "../../components/customButton";
-// import eyeSVG from "../../assets/eye.svg";
 
 function SignupStepper() {
   const [step, setStep] = useState(1);

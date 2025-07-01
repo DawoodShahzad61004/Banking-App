@@ -9,6 +9,7 @@ function SignupStepTwo({ formData, handleInputChange }) {
         type="email"
         value={formData.email}
         placeholder="Enter your email"
+        required
         changeHandler={handleInputChange}
       />
       <div className="grid grid-cols-2 gap-[16px]">
@@ -18,6 +19,7 @@ function SignupStepTwo({ formData, handleInputChange }) {
           type="tel"
           value={formData.phoneNumber}
           placeholder="03XX-XXXXXXX"
+          required
           changeHandler={handleInputChange}
         />
         <InputField
@@ -25,6 +27,7 @@ function SignupStepTwo({ formData, handleInputChange }) {
           name="cnicNumber"
           value={formData.cnicNumber}
           placeholder="XXXXX-XXXXXXX-X"
+          required
           changeHandler={handleInputChange}
         />
       </div>

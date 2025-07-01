@@ -15,6 +15,7 @@ function SignupStepOne({
           name="firstName"
           value={formData.firstName}
           placeholder="Enter your first name"
+          required
           changeHandler={handleInputChange}
         />
         <InputField
@@ -22,6 +23,7 @@ function SignupStepOne({
           name="lastName"
           value={formData.lastName}
           placeholder="Enter your last name"
+          required
           changeHandler={handleInputChange}
         />
       </div>
@@ -31,6 +33,7 @@ function SignupStepOne({
         name="username"
         value={formData.username}
         placeholder="Choose a username"
+        required
         changeHandler={handleInputChange}
       />
 
@@ -41,6 +44,7 @@ function SignupStepOne({
           type={passwordVisible ? "text" : "password"}
           value={formData.password}
           placeholder="Enter password"
+          required
           changeHandler={handleInputChange}
         />
         <button
@@ -62,6 +66,7 @@ function SignupStepOne({
         type={passwordVisible ? "text" : "password"}
         value={formData.confirmPassword}
         placeholder="Re-enter password"
+        required
         changeHandler={handleInputChange}
       />
     </>
