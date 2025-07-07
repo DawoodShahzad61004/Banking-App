@@ -18,6 +18,7 @@ function SignupStepper() {
   });
   const [passwordVisible, setPasswordVisible] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
+  const [errors, setErrors] = useState({});
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -31,10 +32,54 @@ function SignupStepper() {
     setPasswordVisible((prev) => !prev);
   };
 
-  const handleNext = () => setStep((prev) => prev + 1);
+  const handleNext = () => {
+    const { firstName, lastName, username, password, confirmPassword } =
+      formData;
+    const newErrors = {};
+
+    if (!firstName.trim()) newErrors.firstName = "First name is required.";
+    if (!lastName.trim()) newErrors.lastName = "Last name is required.";
+    if (!username.trim()) newErrors.username = "Username is required.";
+    if (!password) newErrors.password = "Password is required.";
+    if (!confirmPassword)
+      newErrors.confirmPassword = "Please confirm your password.";
+    if (password && confirmPassword && password !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match.";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
+    setStep((prev) => prev + 1);
+  };
+
   const handleBack = () => setStep((prev) => prev - 1);
   const handleSubmit = (e) => {
     e.preventDefault();
+    const { phoneNumber, cnicNumber } = formData;
+    const newErrors = {};
+
+    const plainPhone = phoneNumber.replace(/-/g, "");
+    const plainCnic = cnicNumber.replace(/-/g, "");
+
+    if (!/^\d{11}$/.test(plainPhone) || !plainPhone.startsWith("03")) {
+      newErrors.phoneNumber =
+        "Phone number must start with 03 and be 11 digits.";
+    }
+
+    if (!/^\d{13}$/.test(plainCnic)) {
+      newErrors.cnicNumber = "CNIC number must be exactly 13 digits.";
+    }
+
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+
+    setErrors({});
     console.log("Submitted Data:", formData);
   };
 
@@ -60,12 +105,14 @@ function SignupStepper() {
                 handleInputChange={handleInputChange}
                 passwordVisible={passwordVisible}
                 handlePasswordToggle={handlePasswordToggle}
+                errors={errors}
               />
             )}
             {step === 2 && (
               <SignupStepTwo
                 formData={formData}
                 handleInputChange={handleInputChange}
+                errors={errors}
               />
             )}
 

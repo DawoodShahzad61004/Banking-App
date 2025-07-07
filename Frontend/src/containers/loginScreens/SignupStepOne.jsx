@@ -6,6 +6,7 @@ function SignupStepOne({
   handleInputChange,
   passwordVisible,
   handlePasswordToggle,
+  errors,
 }) {
   return (
     <>
@@ -17,6 +18,7 @@ function SignupStepOne({
           placeholder="Enter your first name"
           required
           changeHandler={handleInputChange}
+          error={errors.firstName}
         />
         <InputField
           label="Last Name"
@@ -25,6 +27,7 @@ function SignupStepOne({
           placeholder="Enter your last name"
           required
           changeHandler={handleInputChange}
+          error={errors.lastName}
         />
       </div>
 
@@ -35,6 +38,7 @@ function SignupStepOne({
         placeholder="Choose a username"
         required
         changeHandler={handleInputChange}
+        error={errors.username}
       />
 
       <div className="relative">
@@ -47,6 +51,7 @@ function SignupStepOne({
           required
           changeHandler={handleInputChange}
           autoComplete="new-password"
+          error={errors.password}
         />
         <button
           type="button"
@@ -70,6 +75,7 @@ function SignupStepOne({
         required
         changeHandler={handleInputChange}
         autoComplete="new-password"
+        error={errors.confirmPassword}
       />
     </>
   );
