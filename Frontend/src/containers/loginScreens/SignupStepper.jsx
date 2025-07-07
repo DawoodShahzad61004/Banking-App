@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SignupStepOne from "./SignupStepOne";
 import SignupStepTwo from "./SignupStepTwo";
 import Button from "../../components/customButton";
+import { Link } from "react-router-dom";
 
 function SignupStepper() {
   const [step, setStep] = useState(1);
@@ -16,6 +17,7 @@ function SignupStepper() {
     cnicNumber: "",
   });
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -35,6 +37,11 @@ function SignupStepper() {
     e.preventDefault();
     console.log("Submitted Data:", formData);
   };
+
+  useEffect(() => {
+    const timeout = setTimeout(() => setIsLoaded(true), 200);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className="min-h-screen bg-[linear-gradient(135deg,_#eff6ff_0%,_#ffffff_50%,_#dbeafe_100%)] flex items-center justify-center p-[16px]">
@@ -70,6 +77,23 @@ function SignupStepper() {
                 <Button text="Next" type="button" onClick={handleNext} />
               )}
               {step === 2 && <Button text="Sign Up" type="submit" />}
+            </div>
+            <div
+              className={`mt-[24px] sm:mt-[32px] text-center transform transition-all duration-800 delay-1100 ${
+                isLoaded
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              }`}
+            >
+              <p className="text-[13px] sm:text-[14px] text-[#4b5563]">
+                Already have an account?{" "}
+                <Link
+                  to="/login"
+                  className="font-medium text-[#2563eb] hover:text-[#3b82f6] transition-colors duration-200"
+                >
+                  Log in here
+                </Link>
+              </p>
             </div>
           </form>
         </div>

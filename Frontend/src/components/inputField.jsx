@@ -19,6 +19,7 @@ function InputField(props) {
         required
         className={`${inputClass}`}
         placeholder={props.placeholder || "input-placeholder"}
+        autoComplete={props.autoComplete || "off"}
       />
     </div>
   );

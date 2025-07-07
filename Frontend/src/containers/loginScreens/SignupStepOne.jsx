@@ -46,6 +46,7 @@ function SignupStepOne({
           placeholder="Enter password"
           required
           changeHandler={handleInputChange}
+          autoComplete="new-password"
         />
         <button
           type="button"
@@ -68,6 +69,7 @@ function SignupStepOne({
         placeholder="Re-enter password"
         required
         changeHandler={handleInputChange}
+        autoComplete="new-password"
       />
     </>
   );
