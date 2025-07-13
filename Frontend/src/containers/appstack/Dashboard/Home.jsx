@@ -1,16 +1,13 @@
-import React from "react";
+import NavBar from './NavBar';
 
 function Home() {
-  return (
-    <div className="grid grid-cols-10 grid-rows-10 gap-4">
-      <div className="col-span-2 row-span-10">1</div>
-      <div className="col-span-3 col-start-3">2</div>
-      <div className="col-span-2 col-start-9">3</div>
-      <div className="col-span-5 row-span-5 col-start-3 row-start-2">4</div>
-      <div className="col-span-5 row-span-4 col-start-3 row-start-7">5</div>
-      <div className="col-span-3 row-span-9 col-start-8 row-start-2">6</div>
-    </div>
-  );
+    return (
+            <div className='flex h-screen w-screen items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300'>
+                <div className='flex items-center bg-white w-[95%] h-[97%] rounded-[10px] shadow-lg shadow-blue-500/30 overflow-hidden p-4'>
+                    <NavBar />
+                </div>
+            </div>
+    );
 }
 
 export default Home;
