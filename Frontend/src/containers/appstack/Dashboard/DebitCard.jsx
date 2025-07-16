@@ -12,7 +12,6 @@ function DebitCard({
 
   return (
     <div className="relative w-full max-w-[340px] h-[200px] rounded-[20px] bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white shadow-xl p-6 transition-all duration-500 hover:scale-[1.02]">
-      {/* Bank Logo or Label */}
       <div className="flex justify-between items-center">
         <div className="text-2xl md:text-3xl font-bold text-slate-100">
           Apna <span className="text-sky-200 italic">BANK</span>
