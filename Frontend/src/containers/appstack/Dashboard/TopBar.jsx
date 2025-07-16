@@ -6,13 +6,11 @@ function TopBar() {
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
-    // Optionally: call a prop like onSearch(e.target.value)
-    // or debounce/filter/search results
   };
 
   return (
     <div className="w-full bg-white rounded-2xl mt-2 mr-2 ml-2 h-[72px] px-6 flex items-center justify-between shadow-md border border-gray-200">
-      {/* Search Field with Icon */}
+      {/* Search Field*/}
       <div className="relative w-full max-w-md">
         <span className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
           <Search className="w-5 h-5 text-gray-400" />
@@ -36,7 +34,7 @@ function TopBar() {
         </button>
         <button className="flex items-center gap-2 px-4 py-2 rounded-full hover:bg-gray-100 transition text-sm font-medium text-gray-700">
           <UserCircle className="w-6 h-6" />
-          <span>Scarlett</span>
+          <span>Dawood</span>
         </button>
       </div>
     </div>

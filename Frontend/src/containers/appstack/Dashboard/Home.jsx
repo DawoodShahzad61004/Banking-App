@@ -1,5 +1,6 @@
-import NavBar from './NavBar';
-import TopBar from './TopBar';
+import NavBar from "./NavBar";
+import TopBar from "./TopBar";
+import DebitCard from "./DebitCard";
 
 function Home() {
   return (
@@ -10,12 +11,13 @@ function Home() {
           <NavBar />
         </div>
 
-        {/* Right Side Content with TopBar */}
+        {/* Right Side Content with TopBar and DebitCard */}
         <div className="flex flex-col flex-1 h-full">
           <TopBar />
-          <div className="flex-1 p-6 overflow-auto">
-            {/* Main content goes here */}
-            <h1 className="text-xl font-semibold text-gray-800">Dashboard Content</h1>
+
+          {/* Place DebitCard at top-left under TopBar */}
+          <div className="flex flex-col p-6 gap-4">
+            <DebitCard />
           </div>
         </div>
       </div>
